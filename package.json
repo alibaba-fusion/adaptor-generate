@@ -1,6 +1,7 @@
 {
   "name": "@alifd/adaptor-generate",
   "version": "0.1.0",
+  "description": "Next adaptor generate",
   "main": "umd/adaptor-generate.js",
   "module": "umd/adaptor-generate.esm.js",
   "unpkg": "umd/adaptor-generate.production.min.js",
@@ -8,6 +9,16 @@
   "files": [
     "src",
     "umd"
+  ],
+  "author": "fusion-team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alibaba-fusion/adaptor-generate.git"
+  },
+  "keywords": [
+    "adaptor",
+    "fusion"
   ],
   "scripts": {
     "start": "node scripts/start.js",
@@ -82,6 +93,10 @@
     "webpack-dev-server": "^3.3.1",
     "webpack-manifest-plugin": "^2.0.4",
     "workbox-webpack-plugin": "^4.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "browserslist": [
     ">0.2%",
