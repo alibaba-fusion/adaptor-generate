@@ -1,5 +1,5 @@
 {
-  "name": "adaptor-generate",
+  "name": "@alifd/adaptor-generate",
   "version": "0.1.0",
   "main": "umd/adaptor-generate.js",
   "module": "umd/adaptor-generate.esm.js",
