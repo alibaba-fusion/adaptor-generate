@@ -4,10 +4,10 @@ import generate from './generate/pc';
 import { initDemo } from './utils';
 import generateApp from './layouts/GenerateApp';
 
-export default (Adaptor, isDev = true) => {
+export default (Adaptor, isProduction = false) => {
   let App = generate(Adaptor);
 
-  if (isDev) {
+  if (!isProduction) {
     App = generateApp(App);
   }
 

@@ -1,8 +1,18 @@
 {
   "name": "adaptor-generate",
   "version": "0.1.0",
+  "main": "umd/adaptor-generate.js",
+  "module": "umd/adaptor-generate.esm.js",
+  "unpkg": "umd/adaptor-generate.production.min.js",
+  "jsdelivr": "umd/adaptor-generate.production.min.js",
+  "files": [
+    "src",
+    "umd"
+  ],
   "scripts": {
-    "start": "node scripts/start.js"
+    "start": "node scripts/start.js",
+    "prepublishOnly": "npm run build",
+    "build": "cross-env NODE_ENV=production rollup -c ./rollup.config.js"
   },
   "dependencies": {
     "@alifd/adaptor-helper": "0.1.2",
