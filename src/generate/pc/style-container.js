@@ -115,10 +115,6 @@ export default styled.div`
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    &:hover,
-    &.active {
-      border-color: rgb(85, 132, 255);
-    }
     &::before {
       content: '';
       position: absolute;

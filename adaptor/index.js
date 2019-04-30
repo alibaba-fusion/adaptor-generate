@@ -1,4 +1,4 @@
-import AdaptorGenerate from '../umd/adaptor-generate.esm';
+import AdaptorGenerate from '../src';
 
 import Adaptor from './adaptor';
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { normalizeAdaptor, generateDemos, findProp  } from '@alifd/adaptor-helper';
-import Context from './context';
 import StyledContainer from './style-container';
 import DemoSection from './DemoSection';
 
@@ -135,14 +134,11 @@ export default (Adaptor) => {
     }
 
     render() {
-      const { activeId } = this.state;
 
       return (
-        <Context.Provider value={{ activeId, changeActiveId: this.changeActiveId }}>
-          <StyledContainer>
-            {this.generateDemos()}
-          </StyledContainer>
-        </Context.Provider>
+        <StyledContainer>
+          {this.generateDemos()}
+        </StyledContainer>
       );
     }
   }
