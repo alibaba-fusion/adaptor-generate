@@ -1549,8 +1549,6 @@
     };
   };
 
-  var Context = React$1__default.createContext({});
-
   function _taggedTemplateLiteral(strings, raw) {
     if (!raw) {
       raw = strings.slice(0);
@@ -4058,7 +4056,7 @@
   }
 
   function _templateObject() {
-    var data = taggedTemplateLiteral(["\n  border: 1px solid #e6e7eb;\n  .demo-shape {\n    margin-bottom: 20px;\n  }\n\n  .demo-header {\n    padding: 10px 15px;\n    background-color: #e6e7eb;\n    font-size: 18px;\n    /* border-top-left-radius: 3px;\n    border-top-right-radius: 3px; */\n    color: #333;\n  }\n\n  .demo-content-filter {\n    background-color: #fff;\n    border-bottom: 1px solid #ccc;\n    padding: 10px 20px;\n    margin: 0;\n    list-style: none;\n    font-size: 12px;\n    color: #666;\n    li {\n      display: flex;\n      margin: 6px 0;\n      height: 20px;\n      line-height: 20px;\n      justify-content: flex-start;\n      align-items: center;\n    }\n    span {\n      display: inline-block;\n      padding-right: 12px;\n      width: 124px;\n      font-weight: 700;\n      text-align: right;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n    }\n\n    label {\n      margin-right: 24px;\n    }\n\n    input {\n      margin-right: 4px;\n    }\n  }\n\n  .demo-section {\n    border-bottom: 1px solid #e6e7eb;\n    &:last-child {\n      border-bottom: none;\n    }\n  }\n  .demo-section-header {\n    padding: 0 15px;\n    font-size: 16px;\n    height: 50px;\n    line-height: 50px;\n  }\n\n  .demo-body {\n    padding-bottom: 10px;\n    > table {\n      border-collapse: collapse;\n      table-layout: fixed;\n    }\n  }\n\n  .demo-head {\n    > td {\n      padding: 0 10px;\n      text-align: left;\n      vertical-align: top;\n      font-size: 12px;\n      height: 30px;\n      line-height: 30px;\n      color: #999;\n    }\n  }\n\n  .demo-group {\n    .label {\n      width: 80px;\n      padding-right: 10px;\n      padding-top: 20px;\n      text-align: right;\n      font-size: 13px;\n      color: #999;\n      vertical-align: top;\n      > span {\n        display: block;\n        padding-bottom: 5px;\n        border-bottom: 1px solid #dcdee3;\n      }\n    }\n    .wrap {\n      padding: 10px 5px;\n      text-align: left;\n      vertical-align: top;\n    }\n  }\n\n  .demo-item {\n    padding: 10px;\n    border: 1px dashed transparent;\n    border-radius: 3px;\n    display: inline-block;\n    vertical-align: top;\n    overflow: hidden;\n    cursor: pointer;\n    position: relative;\n    &:hover,\n    &.active {\n      border-color: rgb(85, 132, 255);\n    }\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      right: 0;\n      top: 0;\n      bottom: 0;\n      z-index: 2;\n    }\n    &::after {\n      content: \" \";\n      display: block;\n      clear: left;\n    }\n    > * {\n      float: left;\n    }\n  }\n"]);
+    var data = taggedTemplateLiteral(["\n  border: 1px solid #e6e7eb;\n  .demo-shape {\n    margin-bottom: 20px;\n  }\n\n  .demo-header {\n    padding: 10px 15px;\n    background-color: #e6e7eb;\n    font-size: 18px;\n    /* border-top-left-radius: 3px;\n    border-top-right-radius: 3px; */\n    color: #333;\n  }\n\n  .demo-content-filter {\n    background-color: #fff;\n    border-bottom: 1px solid #ccc;\n    padding: 10px 20px;\n    margin: 0;\n    list-style: none;\n    font-size: 12px;\n    color: #666;\n    li {\n      display: flex;\n      margin: 6px 0;\n      height: 20px;\n      line-height: 20px;\n      justify-content: flex-start;\n      align-items: center;\n    }\n    span {\n      display: inline-block;\n      padding-right: 12px;\n      width: 124px;\n      font-weight: 700;\n      text-align: right;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n    }\n\n    label {\n      margin-right: 24px;\n    }\n\n    input {\n      margin-right: 4px;\n    }\n  }\n\n  .demo-section {\n    border-bottom: 1px solid #e6e7eb;\n    &:last-child {\n      border-bottom: none;\n    }\n  }\n  .demo-section-header {\n    padding: 0 15px;\n    font-size: 16px;\n    height: 50px;\n    line-height: 50px;\n  }\n\n  .demo-body {\n    padding-bottom: 10px;\n    > table {\n      border-collapse: collapse;\n      table-layout: fixed;\n    }\n  }\n\n  .demo-head {\n    > td {\n      padding: 0 10px;\n      text-align: left;\n      vertical-align: top;\n      font-size: 12px;\n      height: 30px;\n      line-height: 30px;\n      color: #999;\n    }\n  }\n\n  .demo-group {\n    .label {\n      width: 80px;\n      padding-right: 10px;\n      padding-top: 20px;\n      text-align: right;\n      font-size: 13px;\n      color: #999;\n      vertical-align: top;\n      > span {\n        display: block;\n        padding-bottom: 5px;\n        border-bottom: 1px solid #dcdee3;\n      }\n    }\n    .wrap {\n      padding: 10px 5px;\n      text-align: left;\n      vertical-align: top;\n    }\n  }\n\n  .demo-item {\n    padding: 10px;\n    border: 1px dashed transparent;\n    border-radius: 3px;\n    display: inline-block;\n    vertical-align: top;\n    overflow: hidden;\n    cursor: pointer;\n    position: relative;\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      right: 0;\n      top: 0;\n      bottom: 0;\n      z-index: 2;\n    }\n    &::after {\n      content: \" \";\n      display: block;\n      clear: left;\n    }\n    > * {\n      float: left;\n    }\n  }\n"]);
 
     _templateObject = function _templateObject() {
       return data;
@@ -4122,22 +4120,16 @@
             background = _this$props.background,
             node = _this$props.node,
             adaptor = _this$props.adaptor;
-        var _this$context = this.context,
-            activeId = _this$context.activeId,
-            changeActiveId = _this$context.changeActiveId;
         if (!node) return null;
         var demoContent = renderAdaptor(adaptor, _extends_1({}, node.props));
         return React$1__default.createElement("div", {
-          className: "demo-item ".concat(id === activeId ? 'active' : ''),
+          className: "demo-item",
           "data-demo": JSON.stringify({
             id: id,
             height: height,
             background: background,
             node: node
           }),
-          onClick: function onClick() {
-            return changeActiveId && changeActiveId(id);
-          },
           style: {
             height: height || 'auto',
             background: background || ''
@@ -4156,7 +4148,6 @@
     node: propTypes.object,
     adaptor: propTypes.object
   };
-  DemoItem.contextType = Context;
 
   var DemoSection =
   /*#__PURE__*/
@@ -4421,13 +4412,7 @@
       }, {
         key: "render",
         value: function render() {
-          var activeId = this.state.activeId;
-          return React$1__default.createElement(Context.Provider, {
-            value: {
-              activeId: activeId,
-              changeActiveId: this.changeActiveId
-            }
-          }, React$1__default.createElement(StyledContainer, null, this.generateDemos()));
+          return React$1__default.createElement(StyledContainer, null, this.generateDemos());
         }
       }], [{
         key: "getDerivedStateFromProps",
