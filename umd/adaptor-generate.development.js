@@ -5200,7 +5200,7 @@
                   data = props.data;
               var defaultProps = getDefaultProps(DemoView.Adaptor, shape);
               if (defaultProps.size && defaultProps.size !== size) return false;
-              if (defaultProps.state && defaultProps.state.state !== state) return false;
+              if (defaultProps.state && defaultProps.state !== state) return false;
               if (data && STATE_MARK[data.substring(0, 1)]) return false;
               return true;
             })
