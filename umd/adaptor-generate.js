@@ -902,7 +902,7 @@ function (_Component) {
             }, React$1__default.createElement("input", {
               value: value,
               onChange: function onChange(e) {
-                return _this2.handlePropsChange(name, e.target.value);
+                return _this2.handlePropsChange(name, Number(e.target.value) || 0);
               },
               type: "number"
             }));
