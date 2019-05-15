@@ -126,7 +126,7 @@ export default class DemoEditor extends Component {
         case Types.number:
           inputNode = (
             <div className="form-input">
-              <input value={value} onChange={(e) => this.handlePropsChange(name, e.target.value)} type="number" />
+              <input value={value} onChange={(e) => this.handlePropsChange(name, Number(e.target.value) || 0)} type="number" />
             </div>
           );
           break;
