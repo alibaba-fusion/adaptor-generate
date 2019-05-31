@@ -192,6 +192,47 @@ var initDemo = function initDemo(compName) {
       compName: componentName
     }, '*');
   }
+
+  window.addEventListener('message', function (_ref) {
+    var origin = _ref.origin,
+        data = _ref.data;
+
+    if (origin && origin.indexOf('fusion') !== -1) {
+      var _ref2 = data || {},
+          _ref2$from = _ref2.from,
+          from = _ref2$from === void 0 ? '' : _ref2$from,
+          _ref2$type = _ref2.type,
+          type = _ref2$type === void 0 ? '' : _ref2$type;
+
+      if (from !== 'fusion') return;
+
+      switch (type) {
+        case 'stylesheet':
+          var _data$stylesheets = data.stylesheets,
+              stylesheets = _data$stylesheets === void 0 ? [] : _data$stylesheets;
+          document.querySelectorAll('[data-theme-style]').forEach(function (element) {
+            return element.parentNode.removeChild(element);
+          });
+          stylesheets.forEach(function (url) {
+            var stylesheet = document.createElement('link');
+            stylesheet.setAttribute('rel', 'stylesheet');
+            stylesheet.setAttribute('href', url);
+            stylesheet.setAttribute('data-theme-style', true);
+            document.head.appendChild(stylesheet);
+          });
+          return;
+
+        case 'change_background':
+          var _data$background = data.background,
+              background = _data$background === void 0 ? '' : _data$background;
+          document.body.style.background = background;
+          return;
+
+        default:
+          break;
+      }
+    }
+  });
 };
 var firstLowerCase = function firstLowerCase(str) {
   return str.replace(/\B([A-Z])/g, "-$1").toLowerCase();
