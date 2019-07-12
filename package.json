@@ -1,6 +1,6 @@
 {
   "name": "@alifd/adaptor-generate",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Next adaptor generate",
   "main": "umd/adaptor-generate.js",
   "module": "umd/adaptor-generate.esm.js",
