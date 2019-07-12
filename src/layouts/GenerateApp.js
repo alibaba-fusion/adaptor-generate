@@ -21,8 +21,8 @@ export default (DemoView) => {
           const { shape, size, state, data } = props;
           const defaultProps = getDefaultProps(DemoView.Adaptor, shape);
           if (defaultProps.size && defaultProps.size !== size) return false;
-          if (defaultProps.state && defaultProps.state !== state) {
-            return false;
+          if (defaultProps.state) {
+            if (defaultProps.state !== state) return false;
           } else if (data && STATE_MARK[data.substring(0, 1)]) {
             return false;
           }
