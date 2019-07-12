@@ -1359,8 +1359,13 @@ var generateApp = (function (DemoView) {
                 data = props.data;
             var defaultProps = adaptorHelper.getDefaultProps(DemoView.Adaptor, shape);
             if (defaultProps.size && defaultProps.size !== size) return false;
-            if (defaultProps.state && defaultProps.state !== state) return false;
-            if (data && adaptorHelper.STATE_MARK[data.substring(0, 1)]) return false;
+
+            if (defaultProps.state && defaultProps.state !== state) {
+              return false;
+            } else if (data && adaptorHelper.STATE_MARK[data.substring(0, 1)]) {
+              return false;
+            }
+
             return true;
           })
         });
