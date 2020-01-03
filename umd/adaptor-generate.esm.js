@@ -1,5 +1,5 @@
 import React$1, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { findProp, findOptionLabel, filterDemoState, getStates, normalizeAdaptor, generateDemos, getDefaultProps, Types, uuid, STATE_MARK } from '@alifd/adaptor-helper';
 import styled from 'styled-components';
@@ -266,6 +266,25 @@ function (_Component) {
   }
 
   createClass(DemoItem, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var adaptor = this.props.adaptor;
+      var dom = findDOMNode(this);
+
+      if (dom && dom.firstElementChild) {
+        var element = dom.firstElementChild;
+
+        if (!element.hasAttribute('data-fusioncool')) {
+          throw new Error("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [data-XXX]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
+        } else if (element.style.direction !== 'ltr') {
+          throw new Error("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [style]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
+          element.style.direction = '';
+        }
+      } else {
+        throw new Error("[ERROR]: ".concat(adaptor.name, " DOM \u8282\u70B9\u4E0D\u80FD\u4F7F\u7528 Portal\u6302\u8F7D\u5230\u5176\u4ED6\u5730\u65B9\u5965"));
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -275,7 +294,12 @@ function (_Component) {
           node = _this$props.node,
           adaptor = _this$props.adaptor;
       if (!node) return null;
-      var demoContent = renderAdaptor(adaptor, _extends_1({}, node.props));
+      var demoContent = renderAdaptor(adaptor, _extends_1({}, node.props, {
+        style: {
+          direction: 'ltr'
+        },
+        'data-fusioncool': 'test fusion cool render'
+      }));
       return React$1.createElement("div", {
         className: "demo-item",
         "data-demo": JSON.stringify({
