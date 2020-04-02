@@ -259,6 +259,24 @@ var renderAdaptor = function renderAdaptor(Adaptor) {
   });
   return Adaptor.adaptor(props);
 };
+/**
+ * 判断是否是生产环境
+ * @type {Boolean}
+ */
+
+var isProduction = function isProduction() {
+  var result = false;
+
+  return result;
+};
+
+var warningMsg = function warningMsg(msg) {
+  if (isProduction()) {
+    console.error(msg);
+  } else {
+    throw new Error(msg);
+  }
+};
 
 var DemoItem =
 /*#__PURE__*/
@@ -281,13 +299,13 @@ function (_Component) {
         var element = dom.firstElementChild;
 
         if (!element.hasAttribute('data-fusioncool')) {
-          throw new Error("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [data-XXX]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
+          warningMsg("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [data-XXX]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
         } else if (element.style.direction !== 'ltr') {
-          throw new Error("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [style]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
+          warningMsg("[ERROR]: ".concat(adaptor.name, " \u9700\u8981\u652F\u6301\u900F\u4F20\u5C5E\u6027 [style]\uFF0C\u5426\u5219 Fusion Cool \u65E0\u6CD5\u6B63\u5E38\u6E32\u67D3"));
           element.style.direction = '';
         }
       } else {
-        throw new Error("[ERROR]: ".concat(adaptor.name, " DOM \u8282\u70B9\u4E0D\u80FD\u4F7F\u7528 Portal\u6302\u8F7D\u5230\u5176\u4ED6\u5730\u65B9\u5965"));
+        warningMsg("[ERROR]: ".concat(adaptor.name, " DOM \u8282\u70B9\u4E0D\u80FD\u4F7F\u7528 Portal\u6302\u8F7D\u5230\u5176\u4ED6\u5730\u65B9\u5965"));
       }
     }
   }, {

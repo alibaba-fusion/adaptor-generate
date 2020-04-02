@@ -72,15 +72,5 @@ export const isProduction = () => {
       //
   }
 
-  if (!result) {
-      try {
-          if (window.process.env.NODE_ENV === PRODUCTION_ENV) {
-              result = true;
-          }
-      } catch (err) {
-          //
-      }
-  }
-
   return result;
 };
