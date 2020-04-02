@@ -56,3 +56,31 @@ export const renderAdaptor = (Adaptor, props = {}) => {
 
   return Adaptor.adaptor(props);
 };
+
+/**
+ * 判断是否是生产环境
+ * @type {Boolean}
+ */
+export const isProduction = () => {
+  const PRODUCTION_ENV = 'production';
+  let result = false;
+  try {
+      if (process.env.NODE_ENV === PRODUCTION_ENV) {
+          result = true;
+      }
+  } catch (err) {
+      //
+  }
+
+  if (!result) {
+      try {
+          if (window.process.env.NODE_ENV === PRODUCTION_ENV) {
+              result = true;
+          }
+      } catch (err) {
+          //
+      }
+  }
+
+  return result;
+};
