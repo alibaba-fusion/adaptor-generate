@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import { renderAdaptor } from '../../utils';
+import { renderAdaptor, isProduction } from '../../utils';
 
+const warningMsg = (msg) => {
+  if (isProduction()) {
+    console.error(msg);
+  } else {
+    throw new Error(msg);
+  }
+}
 export default class DemoItem extends Component {
   static propTypes = {
     id: PropTypes.string,
@@ -18,13 +25,13 @@ export default class DemoItem extends Component {
     if (dom && dom.firstElementChild) {
       const element = dom.firstElementChild;
       if (!element.hasAttribute('data-fusioncool')) {
-        throw new Error(`[ERROR]: ${adaptor.name} 需要支持透传属性 [data-XXX]，否则 Fusion Cool 无法正常渲染`);
+        warningMsg(`[ERROR]: ${adaptor.name} 需要支持透传属性 [data-XXX]，否则 Fusion Cool 无法正常渲染`);
       } else if (element.style.direction !== 'ltr') {
-        throw new Error(`[ERROR]: ${adaptor.name} 需要支持透传属性 [style]，否则 Fusion Cool 无法正常渲染`);
+        warningMsg(`[ERROR]: ${adaptor.name} 需要支持透传属性 [style]，否则 Fusion Cool 无法正常渲染`);
         element.style.direction = '';
       }
     } else {
-      throw new Error(`[ERROR]: ${adaptor.name} DOM 节点不能使用 Portal挂载到其他地方奥`);
+      warningMsg(`[ERROR]: ${adaptor.name} DOM 节点不能使用 Portal挂载到其他地方奥`);
     }
   }
 

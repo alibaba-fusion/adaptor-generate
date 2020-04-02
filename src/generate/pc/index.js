@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { normalizeAdaptor, generateDemos, findProp  } from '@alifd/adaptor-helper';
+import { normalizeAdaptor, generateDemos, findProp } from '@alifd/adaptor-helper';
 import StyledContainer from './style-container';
 import DemoSection from './DemoSection';
 
@@ -96,7 +96,7 @@ export default (Adaptor) => {
       );
     }
 
-    generateDemos () {
+    generateDemos() {
       const shapes = Adaptor.shape;
       return shapes.map(({ label, value }) => {
         const { props } = Adaptor.editor(value);
